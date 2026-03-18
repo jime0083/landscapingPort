@@ -17,7 +17,9 @@
       "Bash(gh api:*)",
       "Bash(git branch:*)",
       "Bash(git remote:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh run view:*)"
     ]
   }
 }
