@@ -113,8 +113,8 @@ body {
 /* レスポンシブ対応 - 980px以下 */
 @media (max-width: 980px) {
     .event-section {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .philosophy-section {
@@ -254,25 +254,38 @@ body {
     .philosophy-image-wrapper {
         width: 100%;
         max-width: 100%;
+        min-height: auto;
+        position: relative;
+    }
+
+    .philosophy-image-back {
+        position: relative;
+        width: 100%;
+        top: auto;
+        right: auto;
+    }
+
+    .philosophy-image-front {
+        display: none;
     }
 
     /* GreenLaboセクション */
     .greenlabo-image {
-        height: 350px;
+        height: 250px;
     }
 
-    .greenlabo-overlay {
-        padding-left: 5%;
-        padding-right: 5%;
+    .greenlabo-content {
+        padding: 30px 20px;
     }
 
     .greenlabo-title {
-        font-size: 24px;
+        font-size: 20px;
+        margin-bottom: 20px;
     }
 
-    .greenlabo-text {
-        padding-top: 20px;
-        padding-bottom: 20px;
+    .greenlabo-description {
+        font-size: 14px;
+        line-height: 1.8;
     }
 
     /* サービスセクション */
@@ -411,10 +424,10 @@ body {
 
 /* イベントセクション */
 .event-section {
-    padding: 40px 20px !important;
+    padding: 40px 0 !important;
     max-width: 980px;
     margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 0;
 }
 
 .section-title {
@@ -485,7 +498,7 @@ body {
     .event-section {
         padding-top: 20px;
         padding-bottom: 20px;
-        margin-top: 60px;
+        margin-top: 0;
     }
 
     .section-title {
@@ -533,14 +546,30 @@ body {
 }
 
 .philosophy-image-wrapper {
+    position: relative;
     flex: 1;
     max-width: 500px;
+    min-height: 500px;
 }
 
-.philosophy-single-image {
-    width: 100%;
+.philosophy-image-back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
     height: auto;
     object-fit: cover;
+    z-index: 1;
+}
+
+.philosophy-image-front {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 65%;
+    height: auto;
+    object-fit: cover;
+    z-index: 2;
 }
 
 /* GreenLaboセクション */
@@ -552,7 +581,7 @@ body {
 .greenlabo-image {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 400px;
     overflow: hidden;
 }
 
@@ -562,33 +591,21 @@ body {
     object-fit: cover;
 }
 
-.greenlabo-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 10%;
+.greenlabo-content {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 60px 20px;
 }
 
 .greenlabo-title {
-    color: #fff;
+    color: #333;
     font-size: 32px;
     font-weight: normal;
-    line-height: 1.8;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
+    margin-bottom: 30px;
 }
 
-.greenlabo-text {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-.greenlabo-text p {
+.greenlabo-description {
     font-size: 15px;
     line-height: 2;
     color: #333;
@@ -841,7 +858,7 @@ body {
     align-items: center;
     justify-content: center;
     color: #fff;
-    background-image: url('/img/garden1.jpg');
+    background-image: url('/landscapingPort/img/garden1.jpg');
     background-size: cover;
     background-position: center;
     margin-top: 80px;
@@ -1001,7 +1018,7 @@ body {
 }
 
 .company-header {
-    background-image: url('/img/green2.jpg');
+    background-image: url('/landscapingPort/img/green2.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -1159,7 +1176,7 @@ body {
     align-items: center;
     justify-content: center;
     color: #fff;
-    background-image: url('/img/green-book1.png');
+    background-image: url('/landscapingPort/img/green-book1.png');
     background-size: cover;
     background-position: center;
     margin-bottom: 80px;
@@ -1286,7 +1303,7 @@ body {
     align-items: center;
     justify-content: center;
     color: #fff;
-    background-image: url('/img/plant1.jpg');
+    background-image: url('/landscapingPort/img/plant1.jpg');
     background-size: cover;
     background-position: center;
     margin-bottom: 80px;
@@ -1368,7 +1385,7 @@ body {
 
 /* 施工事例ページ */
 .work-header {
-    background-image: url('/img/garden1.jpg');
+    background-image: url('/landscapingPort/img/garden1.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -1473,7 +1490,7 @@ body {
    News Page
    ======================================== */
 .news-header {
-    background-image: url('/img/garden1.jpg');
+    background-image: url('/landscapingPort/img/garden1.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -1560,7 +1577,7 @@ body {
    FAQ Page
    ======================================== */
 .faq-header {
-    background-image: url('/img/garden1.jpg');
+    background-image: url('/landscapingPort/img/garden1.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -1672,7 +1689,7 @@ body {
    Contact Page
    ======================================== */
 .contact-page-header {
-    background-image: url('/img/garden1.jpg');
+    background-image: url('/landscapingPort/img/garden1.jpg');
     background-size: cover;
     background-position: center;
 }
