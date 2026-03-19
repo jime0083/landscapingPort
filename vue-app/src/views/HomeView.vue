@@ -9,7 +9,7 @@
           class="hero-slide"
           :class="{ active: currentHeroSlide === index }"
         >
-          <img :src="slide.image" :alt="slide.alt">
+          <img :src="basePath + slide.image" :alt="slide.alt">
         </div>
       </div>
       <!-- モバイル用イベント情報オーバーレイ -->
@@ -30,7 +30,7 @@
             :key="index"
             class="event-card"
           >
-            <img :src="event.image" :alt="event.title">
+            <img :src="basePath + event.image" :alt="event.title">
             <div class="event-info">
               <p class="date">{{ event.date }}</p>
               <h3>{{ event.title }}</h3>
@@ -59,8 +59,8 @@
           </p>
         </div>
         <div class="philosophy-image-wrapper">
-          <img src="/landscapingPort/img/garden5.jpg" alt="緑の庭園" class="philosophy-image-back">
-          <img src="/landscapingPort/img/flower.jpg" alt="花" class="philosophy-image-front">
+          <img :src="basePath + 'img/garden5.jpg'" alt="緑の庭園" class="philosophy-image-back">
+          <img :src="basePath + 'img/flower.jpg'" alt="花" class="philosophy-image-front">
         </div>
       </div>
     </section>
@@ -68,7 +68,7 @@
     <!-- GreenLaboセクション -->
     <section class="greenlabo-section" :class="{ fadeIn: true, active: sectionsVisible.greenlabo }">
       <div class="greenlabo-image">
-        <img src="/landscapingPort/img/green2.jpg" alt="Green Labo">
+        <img :src="basePath + 'img/green2.jpg'" alt="Green Labo">
       </div>
       <div class="greenlabo-content">
         <h2 class="greenlabo-title">人と緑の関係を科学する<br>新たな拠点「GreenLabo」</h2>
@@ -80,7 +80,7 @@
     <section class="service-section" :class="{ fadeIn: true, active: sectionsVisible.service }">
       <div class="service-grid">
         <div class="service-item">
-          <img src="/landscapingPort/img/garden-company.png" alt="Barns">
+          <img :src="basePath + 'img/garden-company.png'" alt="Barns">
           <div class="service-content">
             <h3>Barns<span>SHOWROOM & ATELIER</span></h3>
             <p>育てる園芸を楽しむ人の納屋のような存在でありたいと名付けられた「バーンズ」では、花苗、観葉植物、ガーデングッズといった植物と共に暮らすアイテムを取りそろえております。</p>
@@ -88,7 +88,7 @@
         </div>
 
         <div class="service-item">
-          <img src="/landscapingPort/img/garden-office6.png" alt="Café Musee">
+          <img :src="basePath + 'img/garden-office6.png'" alt="Café Musee">
           <div class="service-content">
             <h3>Café Musee<span>GREEN HEALING RELAXATION</span></h3>
             <p>緑の癒し効果を体感しながらくつろげるカフェ。店内では壁面緑化や観葉植物をご覧になりながら、自家栽培の無農薬野菜を使用したグリーンピザ、ハーブティーなどをお楽しみいただけます。</p>
@@ -96,7 +96,7 @@
         </div>
 
         <div class="service-item">
-          <img src="/landscapingPort/img/green-book2.png" alt="Planning">
+          <img :src="basePath + 'img/green-book2.png'" alt="Planning">
           <div class="service-content">
             <h3>Planning<span>GARDEN EXTERIOR</span></h3>
             <p>庭から始まる暮らしの物語。最初の庭から、生活を楽しむための庭へ豊かな暮らしのご提案をさせていただきます。</p>
@@ -104,7 +104,7 @@
         </div>
 
         <div class="service-item">
-          <img src="/landscapingPort/img/green-man5.png" alt="Maintenance">
+          <img :src="basePath + 'img/green-man5.png'" alt="Maintenance">
           <div class="service-content">
             <h3>Maintenance<span>GARDEN SERVICE</span></h3>
             <p>春先の施肥から冬の雪吊りまで、年間を通じて様々な庭のメンテナンス作業をお受けいたしております。大切なお庭の管理、ぜひプロの庭師にお任せください。</p>
@@ -112,7 +112,7 @@
         </div>
 
         <div class="service-item wide">
-          <img src="/landscapingPort/img/garden-company2.png" alt="Office Green">
+          <img :src="basePath + 'img/garden-company2.png'" alt="Office Green">
           <div class="service-content">
             <h3>Office Green<span>BIOPHILIC DESIGN</span></h3>
             <p>総合温室では、時代に先駆けてバイオフィリックデザインやハイドロカルチャーを導入。また屋上緑化や壁面緑化などの特殊緑化も設計を施工いたします。「Green Labo」は、オフィスに限らず、居種や性まいなど、人が過ごす様々な空間の緑花を積極的に提案しております。</p>
@@ -154,21 +154,24 @@ export default {
         contact: false
       },
       heroSlides: [
-        { image: '/landscapingPort/img/garden1.jpg', alt: '庭園1' },
-        { image: '/landscapingPort/img/garden5.jpg', alt: '庭園2' },
-        { image: '/landscapingPort/img/green2.jpg', alt: '緑の風景' },
-        { image: '/landscapingPort/img/garden3.jpg', alt: '庭園3' }
+        { image: 'img/garden1.jpg', alt: '庭園1' },
+        { image: 'img/garden5.jpg', alt: '庭園2' },
+        { image: 'img/green2.jpg', alt: '緑の風景' },
+        { image: 'img/garden3.jpg', alt: '庭園3' }
       ],
       events: [
-        { image: '/landscapingPort/img/green-man5.png', date: '2025.4.3', title: 'スプリングフェア' },
-        { image: '/landscapingPort/img/garden-child.jpg', date: '2025.3.5', title: '春のお花大相談会' },
-        { image: '/landscapingPort/img/flower.jpg', date: '2025.2.17', title: '暮らしを楽しむハーブのワークショップ' },
-        { image: '/landscapingPort/img/garden-child2.jpg', date: '2025.1.20', title: '冬の庭づくり講座' },
-        { image: '/landscapingPort/img/green-man3.png', date: '2024.12.15', title: 'クリスマスリース作り' }
+        { image: 'img/green-man5.png', date: '2025.4.3', title: 'スプリングフェア' },
+        { image: 'img/garden-child.jpg', date: '2025.3.5', title: '春のお花大相談会' },
+        { image: 'img/flower.jpg', date: '2025.2.17', title: '暮らしを楽しむハーブのワークショップ' },
+        { image: 'img/garden-child2.jpg', date: '2025.1.20', title: '冬の庭づくり講座' },
+        { image: 'img/green-man3.png', date: '2024.12.15', title: 'クリスマスリース作り' }
       ]
     }
   },
   computed: {
+    basePath() {
+      return import.meta.env.BASE_URL
+    },
     visibleEventCount() {
       if (typeof window !== 'undefined' && window.innerWidth <= 768) {
         return 1
