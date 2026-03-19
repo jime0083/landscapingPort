@@ -1416,13 +1416,12 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 60px 40px;
-    justify-items: center;
 }
 
 .work-item {
     display: flex;
     flex-direction: column;
-    max-width: 550px;
+    width: 100%;
 }
 
 .work-image {
@@ -1431,8 +1430,9 @@ body {
 }
 
 .work-image img {
-    width: 550px;
-    height: 310px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 550 / 310;
     object-fit: cover;
     display: block;
 }
@@ -1471,18 +1471,12 @@ body {
     }
 
     .work-item {
-        max-width: 100%;
+        width: 100%;
     }
 
     .work-item-title {
         font-size: 18px;
         margin-bottom: 15px;
-    }
-
-    .work-image img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 550 / 310;
     }
 }
 
@@ -1618,7 +1612,7 @@ body {
 }
 
 .faq-description {
-    text-align: center;
+    text-align: left;
     font-size: 14px;
     line-height: 1.8;
     margin-bottom: 50px;
@@ -1680,9 +1674,6 @@ body {
         padding-bottom: 20px;
     }
 
-    .faq-description {
-        text-align: left;
-    }
 }
 
 /* ========================================
