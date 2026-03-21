@@ -23,7 +23,11 @@
     <section class="event-section" :class="{ fadeIn: true, active: sectionsVisible.event }">
       <h2 class="section-title">イベント<span>CLASS & EVENT</span></h2>
 
-      <div class="event-slider-container">
+      <div
+        class="event-slider-container"
+        @touchstart="handleTouchStart"
+        @touchend="handleTouchEnd"
+      >
         <div class="event-slider" :style="{ transform: `translateX(-${currentEventSlide * (100 / visibleEventCount)}%)` }">
           <div
             v-for="(event, index) in events"
@@ -165,7 +169,8 @@ export default {
         { image: 'img/flower.jpg', date: '2025.2.17', title: '暮らしを楽しむハーブのワークショップ' },
         { image: 'img/garden-child2.jpg', date: '2025.1.20', title: '冬の庭づくり講座' },
         { image: 'img/green-man3.png', date: '2024.12.15', title: 'クリスマスリース作り' }
-      ]
+      ],
+      touchStartX: 0
     }
   },
   computed: {
@@ -241,6 +246,35 @@ export default {
     stopEventSlider() {
       if (this.eventSlideInterval) {
         clearInterval(this.eventSlideInterval)
+      }
+    },
+    handleTouchStart(e) {
+      this.touchStartX = e.touches[0].clientX
+    },
+    handleTouchEnd(e) {
+      const touchEndX = e.changedTouches[0].clientX
+      const diff = this.touchStartX - touchEndX
+      const threshold = 50
+
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0) {
+          // スワイプ左 - 次へ
+          const maxSlide = this.events.length - 1
+          if (this.currentEventSlide < maxSlide) {
+            this.currentEventSlide++
+          } else {
+            this.currentEventSlide = 0
+          }
+        } else {
+          // スワイプ右 - 前へ
+          if (this.currentEventSlide > 0) {
+            this.currentEventSlide--
+          } else {
+            this.currentEventSlide = this.events.length - 1
+          }
+        }
+        this.stopEventSlider()
+        this.startEventSlider()
       }
     }
   }
@@ -383,21 +417,24 @@ export default {
     color: #fff;
   }
 
-  .hero-event-date {
-    font-size: 14px;
-    margin-bottom: 8px;
-    opacity: 0.9;
-  }
-
+  .hero-event-date,
   .hero-event-title {
-    font-size: 18px;
-    font-weight: normal;
-    margin: 0;
+    display: none;
   }
 
-  /* イベントセクションを非表示（モバイルではヒーローに統合） */
+  /* イベントセクション - モバイル表示 */
   .event-section {
-    display: none;
+    display: block;
+    padding: 30px 0 !important;
+  }
+
+  .event-slider .event-card {
+    flex: 0 0 100%;
+    padding: 0 20px;
+  }
+
+  .event-slider-container {
+    touch-action: pan-x;
   }
 
   /* フィロソフィーセクション */
