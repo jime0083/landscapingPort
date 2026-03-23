@@ -1117,12 +1117,12 @@ body {
 }
 
 .president-details {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .company-name {
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .president-title {

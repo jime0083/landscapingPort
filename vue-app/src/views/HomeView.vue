@@ -133,9 +133,9 @@
         <p class="contact-description">
           外構工事・お庭のご依頼はこちらからお気軽にご連絡ください。お問い合わせの多いご質問や、よくいただくご質問は別途「よくあるご質問」ページに掲載しておりますので、ご活用ください。
         </p>
-        <a href="/contact" class="recruit-link">
+        <router-link to="/contact" class="recruit-link">
           <span class="circle-arrow">→</span>
-        </a>
+        </router-link>
       </div>
     </section>
   </div>

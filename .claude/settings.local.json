@@ -25,7 +25,9 @@
       "Bash(npm run dev:*)",
       "WebFetch(domain:localhost)",
       "Bash(curl:*)",
-      "WebFetch(domain:jime0083.github.io)"
+      "WebFetch(domain:jime0083.github.io)",
+      "Bash(npx gh-pages -d dist)",
+      "Bash(npx gh-pages:*)"
     ]
   }
 }
