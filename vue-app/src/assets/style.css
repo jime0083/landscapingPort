@@ -10,6 +10,17 @@ body {
     line-height: 1.6;
 }
 
+/* SP専用表示 */
+.sp-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sp-only {
+        display: inline;
+    }
+}
+
 /* ヘッダー */
 .header {
     position: fixed;
@@ -198,7 +209,7 @@ body {
     .global-nav {
         display: none;
         position: fixed;
-        top: 60px;
+        top: 50px;
         left: 0;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.95);
@@ -1361,6 +1372,8 @@ body {
     .overview-table td {
         display: block;
         width: 100%;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .overview-table th {

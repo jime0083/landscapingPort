@@ -8,17 +8,15 @@
     <section class="news-page-section">
       <div class="news-page-container">
         <div class="news-page-items">
-          <a href="#" class="news-page-item">
+          <p class="news-page-item">
             <span class="news-page-date">4月 1, 2025</span>
             <span class="news-page-text">ホームページをリニューアルしました</span>
-            <span class="news-page-arrow">→</span>
-          </a>
+          </p>
 
-          <a href="#" class="news-page-item">
+          <p class="news-page-item">
             <span class="news-page-date">3月 31, 2025</span>
             <span class="news-page-text">投稿機能実装</span>
-            <span class="news-page-arrow">→</span>
-          </a>
+          </p>
         </div>
 
         <router-link to="/" class="back-to-top">← BACK TO TOP</router-link>
